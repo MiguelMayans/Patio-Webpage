@@ -1,11 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import Reservation from "../components/Reservation.astro";
+import "@/styles/globals.css";
+import ImgCarousel from "@/components/ImgCarousel.tsx";
 ---
 
 <Layout title="Bienvenidos a Patio">
-	<main>
-	
-	</main>
+  <main>
+    <header>
+      <Header />
+    </header>
+    <body>
+      <Reservation />
+      <ImgCarousel />
+    </body>
+  </main>
 </Layout>
-
