@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import Reservation from "../components/Reservation.astro";
 import "@/styles/globals.css";
-import ImgCarousel from "@/components/ImgCarousel.tsx";
+import ImgCarousel from "@/components/ImgCarousel";
 import Menu from "@/components/Menu.astro";
 import Events from "@/components/Events.astro";
 import NavBar from "@/components/NavBar.astro";
@@ -19,8 +19,7 @@ import NavBar from "@/components/NavBar.astro";
     </nav>
     <body class="relative">
       <Reservation />
-
-      <ImgCarousel />
+      <ImgCarousel client:load />
       <Menu />
       <Events />
     </body>

@@ -1,67 +1,50 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import "swiper/css";
+import "swiper/css/effect-flip";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFlip, Pagination, Navigation } from "swiper/modules";
 
-import { Card, CardContent } from "@/components/ui/card";
+const imagesArr = [
+  "https://res.cloudinary.com/du13ofsms/image/upload/f_auto,q_auto/v1/Patio-Webpage/niodbwhmzhouuepvi9ju",
+  "https://res.cloudinary.com/du13ofsms/image/upload/f_auto,q_auto/v1/Patio-Webpage/tfuv6sxgq53cnd2eyxpm",
+  "https://res.cloudinary.com/du13ofsms/image/upload/f_auto,q_auto/v1/Patio-Webpage/llotrpxgimt4rrbgtvgi",
+  "https://res.cloudinary.com/du13ofsms/image/upload/f_auto,q_auto/v1/Patio-Webpage/suaolckllz77ty1hd52u",
+  "https://res.cloudinary.com/du13ofsms/image/upload/f_auto,q_auto/v1/Patio-Webpage/ajvlk0zcasp0obetjkuv",
+];
 
-const imagesArr = [""];
-
-const ImgCarousel = () => {
+export default function ImgCarousel() {
   return (
-    <Carousel className="w-full max-w-xs mx-auto mt-12">
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="basis-1/2">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <>
+      <section className=" m-10 p-10">
+        <Swiper
+          modules={[EffectFlip, Pagination, Navigation]}
+          effect={"flip"}
+          grabCursor={true}
+          pagination={true}
+          navigation={true}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          </SwiperSlide>
+        </Swiper>
+      </section>
+    </>
   );
-};
-
-export default ImgCarousel;
-
-/*
-const ImgCarousel = () => {
-  const images = [
-    '/path/to/image1.jpg',
-    '/path/to/image2.jpg',
-    '/path/to/image3.jpg',
-    // Add more image URLs here
-  ];
-
-  return (
-    <Carousel className="w-full max-w-xs">
-      <CarouselContent>
-        {images.map((imageUrl, index) => (
-          <CarouselItem key={index} className="basis-1/2">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <img src={imageUrl} alt={`Image ${index + 1}`} />
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-  );
-};
-
-*/
+}
