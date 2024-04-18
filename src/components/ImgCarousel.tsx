@@ -16,13 +16,12 @@ const imagesArr = [
 export default function ImgCarousel() {
   return (
     <>
-      <section className=" m-10 p-10">
+      <section className="mt-14">
         <Swiper
           modules={[EffectFlip, Pagination, Navigation]}
           effect={"flip"}
           grabCursor={true}
           pagination={true}
-          navigation={true}
           className="mySwiper"
         >
           <SwiperSlide>
