@@ -8,7 +8,7 @@ import { EffectFlip, Pagination, Navigation } from "swiper/modules";
 export default function ImgCarousel() {
   return (
     <>
-      <section className="mt-14">
+      <section className="mt-14" id="photos">
         <Swiper
           modules={[EffectFlip, Pagination, Navigation]}
           effect={"flip"}
